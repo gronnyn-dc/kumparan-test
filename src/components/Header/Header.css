@@ -1,0 +1,21 @@
+.kumparan__headerContainer {
+	height: 75px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.kumparan__headerTitle:hover {
+	color: #28a4a4;
+}
+.kumparan__headerTitle {
+	font-size: 18px;
+	font-weight: bold;
+	color: #7e7e7e;
+}
+.kumparan__headerTitleActive {
+	color: #28a4a4;
+}
+.kumparan__headerBorderActive {
+	border-bottom: 3px solid #28a4a4;
+}

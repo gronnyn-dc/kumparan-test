@@ -1,0 +1,36 @@
+.kumparan__cardContainer {
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+	justify-content: space-around;
+	border-radius: 10px;
+	align-items: center;
+}
+.kumparan__cardContainer:hover {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.kumparan__cardWrap {
+	display: flex;
+	align-items: flex-start;
+	width: 20%;
+	padding: 0 5px;
+}
+.kumparan__cardText {
+	text-align: left;
+	word-break: break-all;
+}
+@media (max-width: 1024px) {
+	.kumparan__cardText {
+		font-size: 14px;
+	}
+}
+@media (max-width: 480px) {
+	.kumparan__cardText {
+		font-size: 12px;
+	}
+}
+@media (max-width: 300px) {
+	.kumparan__cardText {
+		font-size: 10px;
+	}
+}

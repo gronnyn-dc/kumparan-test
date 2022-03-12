@@ -1,0 +1,10 @@
+.kumparan__homeWrapper {
+	background-color: #f2f2f2;
+}
+.kumparan__homeContainer {
+	max-width: 1366px;
+	height: 100vh;
+	margin: 0px auto;
+	scroll-behavior: auto !important;
+	overscroll-behavior-x: contain;
+}
