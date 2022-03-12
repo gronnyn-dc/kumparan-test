@@ -1,0 +1,48 @@
+.kumparan__detailWrapper {
+	background-color: #f2f2f2;
+}
+.kumparan__detailContainer {
+	margin: 0px auto;
+	background-color: #fff;
+}
+.kumparan__detailName {
+	font-size: 24px;
+	font-weight: bold;
+}
+.kumparan__detailUsername {
+	font-size: 16px;
+	font-weight: bold;
+	color: #9c9797;
+}
+.kumparan__detailText {
+	padding: 20px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.kumparan__detailTextActive {
+	color: #28a4a4;
+}
+.kumparan__titleText {
+	font-size: 20px;
+}
+.kumparan__titleText:hover {
+	color: #28a4a4;
+}
+.kumparan__bodyText {
+	font-size: 16px;
+}
+.kumparan__content {
+	padding: 20px;
+}
+.kumparan__content:hover {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.kumparan__icon {
+	font-size: 20px;
+}
+.kumparan__pencilIcon:hover {
+	color: #28a4a4;
+}
+.kumparan__trashIcon:hover {
+	color: #28a4a4;
+}

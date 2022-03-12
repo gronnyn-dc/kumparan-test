@@ -7,3 +7,45 @@
 .kumparan__pointer {
 	cursor: pointer;
 }
+.kumparan__flex {
+	display: flex;
+}
+.kumparan__flexColumn {
+	flex-direction: column;
+}
+.kumparan__alignCenter {
+	align-items: center;
+}
+.kumparan__justifyCenter {
+	justify-content: center;
+}
+.kumparan__mt0 {
+	margin-top: 0;
+}
+.kumparan__mt10 {
+	margin-top: 10px;
+}
+.kumparan__mt30 {
+	margin-top: 30px;
+}
+.kumparan__mt50 {
+	margin-top: 50px;
+}
+.kumparan__pt20 {
+	padding-top: 20px;
+}
+.kumparan__mlAuto {
+	margin-left: auto;
+}
+.kumparan__width10Percent {
+	width: 10%;
+}
+.kumparan__width70Percent {
+	width: 70%;
+}
+.kumparan__width80Percent {
+	width: 80%;
+}
+.kumparan__marginHorizontalAuto {
+	margin: 0 auto;
+}

@@ -26,7 +26,7 @@ function Home() {
 	return (
 		<div className='kumparan__homeWrapper'>
 			<div className='kumparan__homeContainer'>
-				<h1>User List</h1>
+				<h1 className='kumparan__mt0 kumparan__pt20'>User List</h1>
 				<Card users={users} handleClickCard={handleClickCard} />
 			</div>
 		</div>
