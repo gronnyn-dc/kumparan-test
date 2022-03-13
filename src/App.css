@@ -1,6 +1,9 @@
 .kumparan__mb20 {
 	margin-bottom: 20px;
 }
+.kumparan__mb100 {
+	margin-bottom: 100px;
+}
 .kumparan__whiteBackground {
 	background-color: #fff;
 }
@@ -13,11 +16,17 @@
 .kumparan__flexColumn {
 	flex-direction: column;
 }
+.kumparan__flexRow {
+	flex-direction: row;
+}
 .kumparan__alignCenter {
 	align-items: center;
 }
 .kumparan__justifyCenter {
 	justify-content: center;
+}
+.kumparan__flexWrap {
+	flex-wrap: wrap;
 }
 .kumparan__mt0 {
 	margin-top: 0;
@@ -34,6 +43,9 @@
 .kumparan__pt20 {
 	padding-top: 20px;
 }
+.kumparan__p20 {
+	padding: 20px;
+}
 .kumparan__mlAuto {
 	margin-left: auto;
 }
@@ -46,6 +58,21 @@
 .kumparan__width80Percent {
 	width: 80%;
 }
+.kumparan__width90Percent {
+	width: 90%;
+}
+.kumparan__width100Percent {
+	width: 100%;
+}
 .kumparan__marginHorizontalAuto {
 	margin: 0 auto;
+}
+.kumparan__fontBold {
+	font-weight: bold;
+}
+.kumparan__font20 {
+	font-size: 20px;
+}
+.kumparan__font16 {
+	font-size: 16px;
 }

@@ -1,0 +1,23 @@
+.kumparan__titleInput {
+	width: 300px;
+	height: 50px;
+}
+@media (max-width: 480px) {
+	.kumparan__titleInput {
+		width: 70%;
+	}
+}
+.kumparan__inputContent {
+	width: 90%;
+	height: 300px;
+}
+.kumparan__editSubmitButton {
+	width: 30%;
+	height: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+	border: 0px;
+	font-weight: bold;
+	background-color: #28a4a4;
+	color: #fff;
+}

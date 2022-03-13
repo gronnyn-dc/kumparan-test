@@ -34,3 +34,14 @@
 		font-size: 10px;
 	}
 }
+.kumparan__commentEmail {
+	margin-bottom: 10px;
+	font-style: italic;
+}
+.kumparan__commentTitle {
+	font-weight: bold;
+}
+.kumparan__commentContainer:hover {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	color: #28a4a4;
+}
