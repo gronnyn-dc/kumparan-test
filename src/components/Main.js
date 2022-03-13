@@ -16,7 +16,7 @@ function Main() {
 	const location = useLocation();
 	return (
 		<Fragment>
-			{location.pathname === '/' && <Header />}
+			<Header />
 			<Switch>
 				<Route exact path='/' component={Home} />
 				<Route exact path='/detail/:id' component={Detail} />

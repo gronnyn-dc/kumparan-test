@@ -9,27 +9,39 @@ function EditComment() {
 	const history = useHistory();
 	const params = useParams();
 	const [body, setBody] = useState('');
-	console.log(params);
+	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		axios.get(`${env.API_URL}comments/${params.commentId}`).then((res) => {
 			setBody(res.data.body);
+			setLoading(false)
 		});
 	}, []);
 
 	const handleClickSubmit = () => {
-		const payload = {
-			body: body,
-		};
-		const axiosConfig = {
-			'Content-Type': 'application/json',
-			Accept: 'application/json',
-		};
-		axios.put(`${env.API_URL}comments/${params.commentId}`, payload, axiosConfig).then((res) => {
-			if (res.status === 200) {
-				history.push(`/post/${params.id}`);
+		setLoading(true)
+		if (body.length > 0) {
+			const payload = {
+				body: body,
+			};
+			const axiosConfig = {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			};
+			axios.put(`${env.API_URL}comments/${params.commentId}`, payload, axiosConfig).then((res) => {
+				if (res.status === 200) {
+					setLoading(false)
+					history.push(`/post/${params.id}`);
+				} else {
+					setLoading(false)
+					alert('Error while submitting, please try again.')
+				}
+			});
+		} else {
+			if (body.length < 1) {
+				alert('Please fill the comment section before submitting.');
 			}
-		});
+		}
 	};
 	return (
 		<div className='kumparan__flex kumparan__flexColumn kumparan__width80Percent kumparan__marginHorizontalAuto'>
@@ -44,7 +56,7 @@ function EditComment() {
 					placeholder='Write the Content'
 				/>
 			</div>
-			<button type='button' className='kumparan__editSubmitButton kumparan__pointer' onClick={() => handleClickSubmit()}>
+			<button type='button' className={`kumparan__editSubmitButton kumparan__pointer ${loading && 'kumparan__loading'}`} onClick={() => handleClickSubmit()} disabled={loading}>
 				Submit
 			</button>
 		</div>

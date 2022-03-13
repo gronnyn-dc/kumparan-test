@@ -11,9 +11,9 @@ function Header() {
 	};
 
 	return (
-		<div className='kumparan__headerContainer kumparan__pointer' onClick={() => handleClickHeader()}>
-			<div className={`${location.pathname === '/' && 'kumparan__headerBorderActive'}`}>
-				<p className={`kumparan__headerTitle ${location.pathname === '/' && 'kumparan__headerTitleActive'}`}>Users</p>
+		<div className='kumparan__headerContainer'>
+			<div className="kumparan__logoContainer kumparan__pointer" onClick={() => handleClickHeader()}>
+				<img src={require('../../assets/kumparan-logo.png')} alt='logo' className="kumparan__logo" />
 			</div>
 		</div>
 	);

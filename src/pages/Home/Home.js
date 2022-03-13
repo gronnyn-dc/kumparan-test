@@ -19,7 +19,6 @@ function Home() {
 
 	const handleClickCard = (user) => {
 		if (user) {
-			// console.log(user, 'user');
 			history.push(`/detail/${user.id}`, { id: user.id });
 		}
 	};

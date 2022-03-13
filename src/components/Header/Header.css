@@ -19,3 +19,10 @@
 .kumparan__headerBorderActive {
 	border-bottom: 3px solid #28a4a4;
 }
+.kumparan__logo {
+	height: 80px;
+	/* width: ; */
+}
+.kumparan__logoContainer {
+	margin-right: auto;
+}

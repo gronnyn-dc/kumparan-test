@@ -9,9 +9,11 @@ function AddPost() {
 	const history = useHistory();
 	const [title, setTitle] = useState('');
 	const [body, setBody] = useState('');
+	const [loading, setLoading] = useState(false)
 
 	const handleClickSubmit = () => {
 		if (title.length > 0 && body.length > 0) {
+			setLoading(true)
 			const axiosConfig = {
 				'Content-Type': 'application/json',
 				Accept: 'application/json',
@@ -23,7 +25,11 @@ function AddPost() {
 			};
 			axios.post(`${env.API_URL}posts`, payload, axiosConfig).then((res) => {
 				if (res.status === 200 || res.status === 201) {
+					setLoading(false)
 					history.push(`/detail/${params.id}`);
+				} else {
+					setLoading(false)
+					alert('Error while submitting, please try again.')
 				}
 			});
 		} else {
@@ -62,7 +68,7 @@ function AddPost() {
 					placeholder='Write the Content'
 				/>
 			</div>
-			<button type='button' className='kumparan__editSubmitButton kumparan__pointer' onClick={() => handleClickSubmit()}>
+			<button type='button' className={`kumparan__editSubmitButton kumparan__pointer ${loading && 'kumparan__loading'}`} onClick={() => handleClickSubmit()} disabled={loading}>
 				Submit
 			</button>
 		</div>

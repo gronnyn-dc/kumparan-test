@@ -9,6 +9,7 @@ function EditPost() {
 	const history = useHistory();
 	const [title, setTitle] = useState('');
 	const [body, setBody] = useState('');
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		if (location.state) {
@@ -20,21 +21,36 @@ function EditPost() {
 	}, [location.state]);
 
 	const handleClickSubmit = () => {
-		const payload = {
-			id: location.state.post_id,
-			title: title,
-			body: body,
-			user_id: location.state.user_id,
-		};
-		const axiosConfig = {
-			'Content-Type': 'application/json',
-			Accept: 'application/json',
-		};
-		axios.put(`${env.API_URL}posts/${location.state.post_id}`, payload, axiosConfig).then((res) => {
-			if (res.status === 200) {
-				history.push(`/detail/${location.state.user_id}`);
+		if (title.length > 0 && body.length > 0) {
+			setLoading(true)
+			const payload = {
+				id: location.state.post_id,
+				title: title,
+				body: body,
+				user_id: location.state.user_id,
+			};
+			const axiosConfig = {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			};
+			axios.put(`${env.API_URL}posts/${location.state.post_id}`, payload, axiosConfig).then((res) => {
+				if (res.status === 200) {
+					setLoading(false)
+					history.push(`/detail/${location.state.user_id}`);
+				} else {
+					setLoading(false)
+					alert('Error while submitting, please try again.')
+				}
+			});
+		} else {
+			if (title.length < 1 && body.length < 1) {
+				alert('Please fill the title and description');
+			} else if (body.length < 1) {
+				alert('Please fill the description');
+			} else {
+				alert('Please fill the title');
 			}
-		});
+		}
 	};
 	return (
 		<div className='kumparan__flex kumparan__flexColumn kumparan__width80Percent kumparan__marginHorizontalAuto'>
@@ -61,7 +77,7 @@ function EditPost() {
 					placeholder='Write the Content'
 				/>
 			</div>
-			<button type='button' className='kumparan__editSubmitButton kumparan__pointer' onClick={() => handleClickSubmit()}>
+			<button type='button' className={`kumparan__editSubmitButton kumparan__pointer ${loading && 'kumparan__loading'}`} onClick={() => handleClickSubmit()} disabled={loading}>
 				Submit
 			</button>
 		</div>
